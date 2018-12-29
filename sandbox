@@ -23,6 +23,12 @@ sandbox () {
   append () {
     case $2 in
       telegraf)
+        if [ "$3" != '' ];then
+          export DEFAULT_HOSTNAME=$3
+        else
+          echo "Use system default hostname: ${DEFAULT_HOSTNAME}"
+        fi
+        echo "Use hostname >>>>>> ${DEFAULT_HOSTNAME}"
         echo "Spinning up Docker Images..."
         echo "If this is your first time starting sandbox this might take a minute..."
         docker-compose -f docker-compose-telegraf.yml up -d --build
