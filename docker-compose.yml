@@ -10,9 +10,9 @@ services:
     image: "influxdb"
     volumes:
       # Mount for influxdb data directory
-      - ./influxdb/data:/var/lib/influxdb
+      - /root/nas/influxdb/data:/var/lib/influxdb
       # Mount for influxdb configuration
-      - ./influxdb/config/:/etc/influxdb/
+      - /root/nas/influxdb/config/:/etc/influxdb/
     ports:
       # The API for InfluxDB is served on port 8086
       - "8086:8086"
