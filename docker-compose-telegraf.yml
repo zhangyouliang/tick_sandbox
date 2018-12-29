@@ -9,7 +9,7 @@ services:
         TELEGRAF_TAG: ${TELEGRAF_TAG}
     image: "telegraf"
     environment:
-      HOSTNAME: "telegraf-getting-started"
+      HOSTNAME: ${DEFAULT_HOSTNAME}
     volumes:
       # Mount for telegraf configuration
       - ./telegraf/:/etc/telegraf/
