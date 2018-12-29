@@ -32,7 +32,7 @@ services:
         TELEGRAF_TAG: ${TELEGRAF_TAG}
     image: "telegraf"
     environment:
-      HOSTNAME: "telegraf-getting-started"
+      HOSTNAME: $HOSTNAME
     # Telegraf requires network access to InfluxDB
     links:
       - influxdb
