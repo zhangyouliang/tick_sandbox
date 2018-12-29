@@ -1,3 +1,12 @@
+> [参考: GitHub](https://github.com/influxdata/sandbox)
+
+##### 说明
+
+单个 influxdb 版本. 如果多个 telegraf 请替换对应版本 `.env-latest`,`.env-nightlies` 对应的 `INFLUXDB_IP` 字段,否则只支持单机监控.
+
+
+
+
 # InfluxData Sandbox
 
 This repo is a quick way to get the entire TICK Stack spun up and working together. It uses [Docker](https://www.docker.com/) to spin up the full TICK stack in a connected fashion. This is heavily tested on MacOS and should mostly work on Linux and Windows.
