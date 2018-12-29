@@ -10,6 +10,11 @@
     # 需要监控的机器上面运行(如果需要监控多台)
     ./sandbox append telegraf
 
+[docker-compose 下载](sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose)
+
+
+    chmod +x /usr/local/bin/docker-compose
+
 # InfluxData Sandbox
 
 This repo is a quick way to get the entire TICK Stack spun up and working together. It uses [Docker](https://www.docker.com/) to spin up the full TICK stack in a connected fashion. This is heavily tested on MacOS and should mostly work on Linux and Windows.
