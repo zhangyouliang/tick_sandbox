@@ -18,7 +18,7 @@ sandbox () {
         echo "Using latest, stable releases"
       fi
       # 替换 ifluxdb 的 ip ,适用于多个 telegraf 公用同一个
-      sed -e "s/{INFLUXDB_IP}/$INFLUXDB_IP/g" telegraf/telegraf.conf.example > telegraf/telegraf.conf
+      sed -e "s/INFLUXDB_IP/$INFLUXDB_IP/g" telegraf/telegraf.conf.example > telegraf/telegraf.conf
   append () {
     case $2 in
       telegraf)
