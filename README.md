@@ -15,6 +15,15 @@
 
     chmod +x /usr/local/bin/docker-compose
 
+
+卸载
+
+    # 卸载全部
+    ./sandbox down
+    # 如果其他机器存在 telegraf ,在对应机器执行...
+     docker-compose -f docker-compose-telegraf.yml down
+
+
 # InfluxData Sandbox
 
 This repo is a quick way to get the entire TICK Stack spun up and working together. It uses [Docker](https://www.docker.com/) to spin up the full TICK stack in a connected fashion. This is heavily tested on MacOS and should mostly work on Linux and Windows.
