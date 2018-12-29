@@ -4,8 +4,11 @@
 
 单个 influxdb 版本. 如果多个 telegraf 请替换对应版本 `.env-latest`,`.env-nightlies` 对应的 `INFLUXDB_IP` 字段,否则只支持单机监控.
 
+    # 单机部署
+    ./sandbox up
 
-
+    # 需要监控的机器上面运行(如果需要监控多台)
+    ./sandbox append telegraf
 
 # InfluxData Sandbox
 
@@ -25,6 +28,7 @@ sandbox commands:
   restart      -> restart the sandbox
   influxdb     -> attach to the influx cli
 
+  append (telegraf) -> build telegraf image and up a telegraf container 
   enter (influxdb||kapacitor||chronograf||telegraf) -> enter the specified container
   logs  (influxdb||kapacitor||chronograf||telegraf) -> stream logs for the specified container
 

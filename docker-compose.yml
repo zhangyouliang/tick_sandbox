@@ -19,6 +19,9 @@ services:
       - "8082:8082"
       # UDP Port
       - "8089:8089"
+    restart: always
+    networks:
+      - default_tick_network
 
   telegraf:
     # Full tag list: https://hub.docker.com/r/library/telegraf/tags/
@@ -40,6 +43,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - influxdb
+    restart: always
+    networks:
+      - default_tick_network
 
   kapacitor:
   # Full tag list: https://hub.docker.com/r/library/kapacitor/tags/
@@ -60,6 +66,9 @@ services:
     ports:
       # The API for Kapacitor is served on port 9092
       - "9092:9092"
+    restart: always
+    networks:
+      - default_tick_network
 
   chronograf:
     # Full tag list: https://hub.docker.com/r/library/chronograf/tags/
@@ -85,9 +94,17 @@ services:
       - kapacitor
       - influxdb
       - telegraf
+    restart: always
+    networks:
+      - default_tick_network
 
   documentation:
     build:
       context: ./documentation
     ports:
       - "3010:3000"
+    restart: always
+    networks:
+      - default_tick_network
+networks:
+  default_tick_network:
