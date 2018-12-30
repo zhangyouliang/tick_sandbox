@@ -10,9 +10,9 @@
     # 需要监控的机器上面运行(如果需要监控多台)
     ./sandbox append telegraf
 
-[docker-compose 下载](sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose)
+docker-compose 下载 
 
-
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/     docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
 
 
